@@ -1,64 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Chat Assistant</title>
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-
-  <body>
-    <div class="page-wrapper">
-      <!------- Header / Branding ------->
-      <header class="site-header">
-        <h1 class="site-title">Smart Product Advisor</h1>
-      </header>
-
-      <!------- Chat Area ------->
-      <main>
-        <section class="chatbox">
-          <div id="chatWindow" class="chat-window">
-            <!-- messages will be appended here via JS -->
-          </div>
-
-          <form id="chatForm" class="chat-form">
-            <label for="userInput" class="visually-hidden">Message</label>
-            <input
-              id="userInput"
-              name="userInput"
-              type="text"
-              placeholder="Ask me about products or routines…"
-              autocomplete="off"
-              required
-            />
-            <button type="submit" id="sendBtn">
-              <span class="material-icons">send</span>
-              <span class="visually-hidden">Send</span>
-            </button>
-          </form>
-        </section>
-      </main>
-
-      <!------- Footer Links ------->
-      <footer class="site-footer">
-        <p>&copy; 2025 Company Name. All rights reserved.</p>
-        <nav>
-          <!-- These URLs are placeholders -->
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Use</a>
-          <a href="#">Contact</a>
-        </nav>
-      </footer>
-    </div>
-
-    <script src="script.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="worker-url" content="" />
+  <title>Beauty Advisor | L’Oréal student project</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <img src="img/loreal-logo.png" alt="L’Oréal" />
+    <span>BEAUTY ADVISOR</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">THE BEAUTY EDIT</p>
+      <h1 id="title">Find your <br />beauty routine.</h1>
+      <p>Explore makeup, skincare, haircare, and fragrance with a beauty advisor that gets to know your preferences.</p>
+      <h2>Try asking</h2>
+      <div class="suggestions">
+        <button type="button" data-prompt="Help me build a simple morning skincare routine for dry skin.">Morning skincare <span aria-hidden="true">↗</span></button>
+        <button type="button" data-prompt="What L’Oréal products could help me care for color-treated hair?">Color-treated hair <span aria-hidden="true">↗</span></button>
+        <button type="button" data-prompt="How can I choose a foundation finish for a natural makeup look?">Natural makeup <span aria-hidden="true">↗</span></button>
+        <button type="button" data-prompt="Help me find a fresh everyday fragrance from a L’Oréal brand.">Everyday fragrance <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+    <section class="chatbox" aria-labelledby="chatTitle">
+      <header class="chat-header"><h2 id="chatTitle">Beauty chat</h2><span>AI ADVISOR</span></header>
+      <div id="chatWindow" class="chat-window" role="log" aria-label="Conversation" tabindex="0"></div>
+      <p id="chatStatus" role="status"></p>
+      <form id="chatForm" class="chat-form">
+        <label class="visually-hidden" for="userInput">Your question</label>
+        <input id="userInput" name="userInput" type="text" placeholder="Ask a beauty question…" maxlength="1200" autocomplete="off" required />
+        <button id="sendBtn" type="submit">Send <span aria-hidden="true">↑</span></button>
+      </form>
+      <p class="note">AI can make mistakes. Check current details on product labels.</p>
+    </section>
+  </main>
+  <footer>Student project · Inspired by L’Oréal</footer>
+</body>
 </html>
